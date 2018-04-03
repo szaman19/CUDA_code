@@ -21,8 +21,8 @@ int main(int argc, char const *argv[]) {
   //Copy memory over to GPU
   cudaMemcpy(device_a,&a,size,cudaMemcpyHostToDevice);
   cudaMemcpy(device_b,&b,size,cudaMemcpyHostToDevice);
-  //<<blocknumber, threadnumber>>
-  kernel<<1,1>>(device_a,device_b,device_c);
+  //<<<blocknumber, threadnumber>>>
+  kernel<<<1,1>>>(device_a,device_b,device_c);
   cudaMemcpy(&c,device_c,size,cudaMemcpyDeviceToHost);
 
   std::cout << c << '\n';
