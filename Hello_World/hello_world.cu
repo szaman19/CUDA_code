@@ -23,6 +23,7 @@ int main(int argc, char const *argv[]) {
   cudaMemcpy(device_b,&b,size,cudaMemcpyHostToDevice);
   //<<<blocknumber, threadnumber>>>
   kernel<<<1,1>>>(device_a,device_b,device_c);
+  //Copy back over to CPU
   cudaMemcpy(&c,device_c,size,cudaMemcpyDeviceToHost);
 
   std::cout << c << '\n';
