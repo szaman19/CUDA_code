@@ -14,12 +14,12 @@ int main(int argc, char const *argv[]) {
     cudaDeviceProp prop;
     cudaGetDeviceProperties(&prop, i);
 
-    cout << "Device Numer: " << i "\n";
+    cout << "Device Numer: " << i <<"\n";
     cout <<"\t"<< "Device Name:"<<prop.name<<"\n";
     cout <<"\t"<< "Clock Rate(KHz):"<<prop.memoryClockRate<<"\n";
     cout <<"\t"<< "But Width(bits):"<<prop.memoryBusWidth<<"\n";
     cout << "\t" << "Memory Bandwidth(GB/s):" <<
-    2.0*prop.memoryClockRate*(prop.memoryBusWidth/8)/1.0e6) << "\n";
+    2.0*prop.memoryClockRate*(prop.memoryBusWidth/8)/1.0e6 << "\n";
   }
 
   return 0;
